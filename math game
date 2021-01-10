@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+    <script type="text/javascript">
+    
+    function game() {
+    const computerNumber = Math.floor(Math.random() * 100);
+    const userGuess = parseInt(prompt('Guess a number (1 - 100)'));
+    while (true) {
+        x = 0;
+        if (userGuess < computerNumber) {
+            x = x + 1;
+        }
+        if (userGuess > computerNumber) {
+            x = x + 1;
+        }
+            if (x > 5 ){
+                print ('you are out of trys');
+                break;
+            }
+        if (computerNumber === userGuess) {
+            console.log('You are right!!');
+            break;
+        } else if (computerNumber > userGuess) {
+            console.log('Too low')
+        } else {
+            console.log('Too high');
+            
+        }
+    }
+}
+
+        }</script>
+    
+</body>

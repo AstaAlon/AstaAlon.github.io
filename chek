@@ -1,0 +1,32 @@
+<p id="hatargil">here is the excersize</p>
+    <input id="answer" />
+    <button onclick="answer()">תשובה</button>
+    <button onclick="newTargil()">תרגיל חדש</button>
+    <p id="result"></p>
+    <script type="text/javascript">
+        let num1 = Math.floor(Math.random() * 100);
+        let num2 = Math.floor(Math.random() * 100);
+
+        function setTargil() {
+            let hatargil = document.getElementById('hatargil');
+
+
+
+
+        function newTargil() {
+            num1 = Math.floor(Math.random() * 100);`
+            num2 = Math.floor(Math.random() * 100);
+            setTargil();
+        }
+
+        function answer() {
+         let answer1 = document.getElementById('answer');
+            
+            hatargil.textContent = "answer1.input + 10";
+        }   
+
+        }
+
+
+        setTargil();
+    </script>

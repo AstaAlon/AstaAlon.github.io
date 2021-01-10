@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>משחק הניחושים</title>
+    <style>
+        h1 {
+            font-size: 75px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 900;
+        }
+
+
+        p {
+            font-size: 25px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 900;
+        }
+
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 20%;
+            height: 100%;
+            direction: rtl;
+        }
+
+        .main {
+            margin-right: 20%;
+            direction: rtl;
+            background-color: lightgray;
+            top: 0;
+            display: block;
+            padding: 20px;
+            height: 100%;
+            border-style: groove;
+            border-width: 10px;
+        }
+    </style>
+
+<body>
+    <div class="nav-bar">
+        <ul>
+            <li><a href="the site of alon.html">דף הבית</a></li>
+            <li><a href="game 2.html">משחק ניחושים</a></li>
+            <li><a href="index.html">משחק החלליות</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <h1 class="main-title">משחק הניחושים הגדול</h1>
+        <p> המחשב מגריל מספר, יש לך חמש נסיונות לנחש את המספר. </p>
+        <button onclick="answer()">בדיקה </button>
+        <button onclick="playAgain()">התחל מחדש</button>
+        <p id="game"></p>
+        <p id="result"></p>
+        <input id="guess" />
+        <script type="text/javascript">
+
+            const computerNumber = Math.floor(Math.random() * 100);
+            let userGuess = 0;
+            let userTrycount = 0;
+
+            function answer() {
+                
+                if (userTrycount < 5) {
+                    userTrycount = userTrycount + 1;
+
+                    userGuess =document.getElementById("guess").value;
+                    if (userGuess != computerNumber) {
+
+                        document.getElementById("game").innerHTML = "נסה שוב";
+
+                    } else {
+                        document.getElementById("game").innerHTML = "כל הכבוד הצלחת!!";
+                    }
+
+                } else {
+                    document.getElementById("game").innerHTML = "נגמרו לך הנסיונות";
+                }
+            }
+
+                function playAgain() {
+                    userTrycount = 0;
+                    document.getElementById("game").innerHTML = "";
+                }
+
+
+
+        </script>
+
+
+    </div>
+</body>
+</head>

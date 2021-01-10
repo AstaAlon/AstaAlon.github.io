@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .main {
+            margin-right: 20%;
+            direction: rtl;
+            background-color: lightgray;
+            top: 0;
+            display: block;
+            padding: 20px;
+            height: 100%;
+            border-style: groove;
+            border-width: 10px;
+            }
+        
+    </style>
+    <title>משחק הניחושים הגדול</title>
+
+</head>
+
+<body>
+    
+    <p id="game">you got 5 tries to guess the number</p>
+
+
+
+    <h1>ברוכים הבאים למשחק הנחיחושים הגדול</h1>
+    <p>המטרה: לנחש על איזה מספר המחשב חושב</p>
+    <p></p>
+    <br />
+    <div class="main">
+        <div class="part">
+            <button onclick="game()">start the guessing game</button>
+        </div>
+
+        <script type="text/javascript">
+
+
+            function game() {
+                let game = document.getElementById('game');
+                game.textContent = 'text';
+                const computerNumber = Math.floor(Math.random() * 100);
+                let userGuess = 0;
+                let x = 0;
+                //console.log ('computerNumber ' + computerNumber);
+                //console.log ('userGuess ' + userGuess);
+
+                while (x < 5) {
+                    userGuess = parseInt(prompt('Guess a number (1 - 100)'));
+                    //console.log ('X ' + x);
+                    if (userGuess < computerNumber) {
+                        x = x + 1;
+                    }
+                    if (userGuess > computerNumber) {
+                        x = x + 1;
+                    }
+                    if (x > 5) {
+                        console.log('you are out of trys');
+                        break;
+                    }
+                    if (computerNumber == userGuess) {
+                        console.log('You are right!!');
+                        break;
+                    } else if (computerNumber > userGuess) {
+                        console.log('Too low');
+                    } else {
+                        console.log('Too high');
+
+
+                    }
+                }
+            }
+
+
+
+
+
+
+        </script>
+
+</body>
